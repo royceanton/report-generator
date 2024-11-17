@@ -20,7 +20,6 @@ import { GeminiClient } from '@/lib/llm/geminiClient';
 
 type ReportMode = 'harvest' | 'vacation';
 
-// Add this helper function at the top of your file, outside the Home component
 const getLastMonday = (date = new Date()) => {
   const today = new Date(date);
   today.setHours(0, 0, 0, 0);
