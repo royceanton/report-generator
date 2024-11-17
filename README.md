@@ -1,6 +1,4 @@
-![demo](https://github.com/royceanton/dump_/blob/main/assets/demo.gif)
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![demo](https://github.com/royceanton/dump_/blob/main/assets/demo2.gif)
 
 ## Getting Started
 
@@ -19,6 +17,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Configuring Google LLM API Key
 
