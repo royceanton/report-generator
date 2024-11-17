@@ -1,13 +1,17 @@
 export interface TimeEntry {
-  task: string;
-  notes?: string;
-  // ... other fields as needed
-}
-
-export interface DayData {
   date: string;
-  tasks: string;
+  client: string;
+  project: string;
+  projectCode: string;
+  task: string;
+  notes: string;
   hours: string;
+  billable: string;
+  invoiced: string;
+  firstName: string;
+  lastName: string;
+  employee: string;
+  externalReferenceUrl: string;
 }
 
 export interface ParsedCsvData {

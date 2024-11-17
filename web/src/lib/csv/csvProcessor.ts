@@ -13,11 +13,19 @@ export class CsvProcessor {
               .filter((row: any) => row.Date && row.Task)
               .map((row: any) => ({
                 date: row.Date,
-                task: row.Task || '',
+                client: row.Client,
+                project: row.Project,
+                projectCode: row['Project Code'],
+                task: row.Task,
                 notes: row.Notes || '',
-                hours: row.Hours?.toString() || '0'
+                hours: row.Hours || '0',
+                billable: row['Billable?'],
+                invoiced: row['Invoiced?'],
+                firstName: row['First Name'],
+                lastName: row['Last Name'],
+                employee: row['Employee?'],
+                externalReferenceUrl: row['External Reference URL']
               }));
-            //console.log('Parsed entries:', entries);
             resolve(entries);
           } catch (error) {
             console.error('CSV parsing error:', error);
@@ -42,9 +50,18 @@ export class CsvProcessor {
       .filter((row: any) => row.Date && row.Task)
       .map((row: any) => ({
         date: row.Date,
-        task: row.Task || '',
+        client: row.Client,
+        project: row.Project,
+        projectCode: row['Project Code'],
+        task: row.Task,
         notes: row.Notes || '',
-        hours: row.Hours?.toString() || '0'
+        hours: row.Hours || '0',
+        billable: row['Billable?'],
+        invoiced: row['Invoiced?'],
+        firstName: row['First Name'],
+        lastName: row['Last Name'],
+        employee: row['Employee?'],
+        externalReferenceUrl: row['External Reference URL']
       }));
   }
 } 

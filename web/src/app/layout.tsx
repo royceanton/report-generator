@@ -2,6 +2,11 @@ import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-empty-interface */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

@@ -15,7 +15,9 @@ interface Props {
   csvData: TimeEntry[];
   startDate?: Date;
   endDate?: Date;
-  onUpdate: (reports: Record<string, string>) => void;
+  onUpdate: (
+    reports: Record<string, string> | ((prev: Record<string, string>) => Record<string, string>)
+  ) => void;
 }
 
 export function ReportPreview({ mode, csvData, startDate, endDate, onUpdate }: Props) {
@@ -70,7 +72,7 @@ export function ReportPreview({ mode, csvData, startDate, endDate, onUpdate }: P
         [date]: { content, isLoading: false }
       }));
 
-      onUpdate(prev => ({
+      onUpdate((prev) => ({
         ...prev,
         [date]: content
       }));

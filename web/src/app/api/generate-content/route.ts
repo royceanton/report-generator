@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export async function POST(req: NextRequest) {
   if (!process.env.GOOGLE_API_KEY) {
     console.error('Missing Google API key');

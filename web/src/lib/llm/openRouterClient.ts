@@ -1,3 +1,4 @@
+import { TimeEntry } from '../types';
 import { GeminiClient } from './geminiClient';
 
 export class OpenRouterClient {

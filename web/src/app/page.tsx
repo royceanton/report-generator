@@ -117,8 +117,14 @@ export default function Home() {
     }
   };
 
-  const handleReportUpdate = (reports: Record<string, string>) => {
-    setGeneratedReports(reports);
+  const handleReportUpdate = (
+    reports: Record<string, string> | ((prev: Record<string, string>) => Record<string, string>)
+  ) => {
+    if (typeof reports === 'function') {
+      setGeneratedReports(reports);
+    } else {
+      setGeneratedReports(reports);
+    }
   };
 
   const generateFileName = () => {

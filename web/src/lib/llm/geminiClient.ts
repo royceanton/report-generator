@@ -1,3 +1,5 @@
+import { TimeEntry } from '../types';
+
 interface GenerationConfig {
   temperature: number;
   topP: number;

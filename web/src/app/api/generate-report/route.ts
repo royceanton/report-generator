@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PDFProcessor } from '@/lib/pdf/pdfProcessor';
 import { format } from 'date-fns';
 import { de } from 'date-fns/locale';
-import path from 'path';
-import { readFileSync } from 'fs';
+
+export const runtime = 'edge';
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,9 +20,16 @@ export async function POST(request: NextRequest) {
     } = data;
 
     try {
-      const templatePath = path.join(process.cwd(), 'input', 'berichtsheft-taeglich-ohne-bezug-ausbildungsrahmenplan-data.pdf');
-      const templateBuffer = readFileSync(templatePath);
+      // Fetch the template from the public directory
+      const templateResponse = await fetch(
+        new URL('/berichtsheft-taeglich-ohne-bezug-ausbildungsrahmenplan-data.pdf', request.url)
+      );
+      
+      if (!templateResponse.ok) {
+        throw new Error('Failed to load PDF template');
+      }
 
+      const templateBuffer = await templateResponse.arrayBuffer();
       const pdfProcessor = new PDFProcessor();
       const pdfBytes = await pdfProcessor.fillPDF(templateBuffer, {
         name: apprenticeName,
