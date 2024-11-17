@@ -1,4 +1,4 @@
-![demo](https://github.com/royceanton/eifi1_lbt4/blob/main/assets/demo.gif)
+![demo](https://github.com/royceanton/dump_/blob/main/assets/demo.gif)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
